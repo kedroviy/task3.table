@@ -1,0 +1,19 @@
+  body{
+    margin: 10px;
+    border-radius: 1px;
+    border-color: black;
+
+  }
+  header{
+    height: 100px;
+    border: 1px solid #000;
+  }
+  content{
+    height: 400px;
+    border: 1px solid #000;
+    margin: auto;
+    padding: 20px 0;
+  }
+  p{
+    margin: 5px;
+  }
