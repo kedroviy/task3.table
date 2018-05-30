@@ -44,11 +44,15 @@ var bennett = [
         tb.appendChild(row);
     })
 
-               var key = document.createElement('th');
-               var keys = Object.keys(bennett);
-                    key.innerHTML += '<th>' + keys + '</th>'
+               var th = document.createElement('th');
+                bennett.forEach(function (value) {
+                    var obj = Object.keys(value);
+                    th.innerHTML += '<th>' + obj[0] + '</th>';
+                        tb.appendChild(th);
+                    // console.log(Object.keys(value));
+                })
 
-                    tb.appendChild(key)
+
 
 
 
