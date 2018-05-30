@@ -11,7 +11,8 @@ var bennett = [
     gender: "male",
     company: "DYNO",
     email: "bennettfry@dyno.com",
-    phone: "+1 (874) 598-2214",},
+    phone: "+1 (874) 598-2214",
+    address: "Vetka, Fabrichnay, come on drink beer",},
     {
     _id: "5afea6459812c507b9c68606",
     index: 0,
@@ -26,42 +27,56 @@ var bennett = [
     company: "ENERSAVE",
     email: "pittmanhendricks@enersave.com",
     phone: "+1 (822) 597-3562",
-    address: "686 Brighton Avenue, Takilma, Arkansas, 8323",
-}]
-    var tb = document.getElementById('table');
+    address: "686 Brighton Avenue, Takilma, Arkansas, 8323",}]
+
+var tb = document.getElementById('table');
+var th = document.createElement('tr');
+bennett.forEach(function (value) {
+    var obj = Object.keys(value);
+    th.innerHTML += '<th>' + obj[0] + '</th>';
+    th.innerHTML += '<th>' + obj[1] + '</th>';
+    th.innerHTML += '<th>' + obj[2] + '</th>';
+    th.innerHTML += '<th>' + obj[3] + '</th>';
+    th.innerHTML += '<th>' + obj[4] + '</th>';
+    th.innerHTML += '<th>' + obj[5] + '</th>';
+    th.innerHTML += '<th>' + obj[6] + '</th>';
+    th.innerHTML += '<th>' + obj[7] + '</th>';
+    th.innerHTML += '<th>' + obj[8] + '</th>';
+    th.innerHTML += '<th>' + obj[9] + '</th>';
+    th.innerHTML += '<th>' + obj[10] + '</th>';
+    th.innerHTML += '<th>' + obj[11] + '</th>';
+    th.innerHTML += '<th>' + obj[12] + '</th>';
+    // th.innerHTML += '<th>' + obj[13] + '</th>';
+        tb.appendChild(th);
+    console.log(Object.keys(value));
+})
+
+    
     bennett.forEach(function (value) {
         var row = document.createElement('tr');
             row.innerHTML += '<td>' + value._id + '</td>'
+            row.innerHTML += '<td>' + value.index + '</td>'
+            row.innerHTML += '<td>' + value.guid + '</td>'
             row.innerHTML += '<td>' + value.isActive + '</td>'
             row.innerHTML += '<td>' + value.balance + '</td>'
             row.innerHTML += '<td>' + value.picture + '</td>'
-            row.innerHTML += '<td>' + value.age + '</td>'
-            row.innerHTML += '<td>' + value.eyeColor + '</td>'
             row.innerHTML += '<td>' + value.name + '</td>'
             row.innerHTML += '<td>' + value.gender + '</td>'
             row.innerHTML += '<td>' + value.company + '</td>'
-            row.innerHTML += '<td>' + value.email+ '</td>'
+            row.innerHTML += '<td>' + value.email + '</td>'
             row.innerHTML += '<td>' + value.phone + '</td>'
-            row.innerHTML += '<td>' + value.adress + '</td>'
+            row.innerHTML += '<td>' + value.address + '</td>'
 
         tb.appendChild(row);
+
+
     })
 
-               var th = document.createElement('tr');
-                bennett.forEach(function (value) {
-                    var obj = Object.keys(value);
-                    th.innerHTML += '<th>' + obj[0] + '</th>';
-                    th.innerHTML += '<th>' + obj[1] + '</th>';
-                    th.innerHTML += '<th>' + obj[2] + '</th>';
-                    th.innerHTML += '<th>' + obj[3] + '</th>';
-                    th.innerHTML += '<th>' + obj[4] + '</th>';
-                    // th.innerHTML += '<th>' + obj[5] + '</th>';
-                    // th.innerHTML += '<th>' + obj[6] + '</th>';
-                        tb.appendChild(th);
-                    // console.log(Object.keys(value));
-                })
+
+
 
 console.log(tb)
+console.log(bennett)
 
 
 
