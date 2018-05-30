@@ -77,11 +77,14 @@ var tb = document.getElementById('table');
 var th = document.createElement('tr');
 var btn = document.createElement('button');
     function srt(){
-        Object.keys(json[0]).sort(); {
+        Object.keys(json[0])
 
-        } {
 
-        }
+            var sortRow = document.createElement('tr');
+            sortRow.innerHTML += '<td>' +  + '</td>'
+
+        
+
         console.log(1);
     }
 
