@@ -36,7 +36,6 @@ var json = [
         "picture": "http://placehold.it/32x32",
         "age": 37,
         "eyeColor": "blue",
-        "eyeColor": "blue",
         "name": "Miranda David",
         "gender": "male",
         "company": "POOCHIES",
@@ -61,24 +60,25 @@ var json = [
     json.splice(1,"")
 var tb = document.getElementById('table');
 var th = document.createElement('tr');
+var btn = document.createElement('button');
 json.forEach(function (value) {
 
     var obj = Object.keys(value);
-    th.innerHTML += '<th>' + obj[0] + '</th>';
-    th.innerHTML += '<th>' + obj[1] + '</th>';
-    th.innerHTML += '<th>' + obj[2] + '</th>';
-    th.innerHTML += '<th>' + obj[3] + '</th>';
-    th.innerHTML += '<th>' + obj[4] + '</th>';
-    th.innerHTML += '<th>' + obj[5] + '</th>';
-    th.innerHTML += '<th>' + obj[6] + '</th>';
-    th.innerHTML += '<th>' + obj[7] + '</th>';
-    th.innerHTML += '<th>' + obj[8] + '</th>';
-    th.innerHTML += '<th>' + obj[9] + '</th>';
-    th.innerHTML += '<th>' + obj[10] + '</th>';
-    th.innerHTML += '<th>' + obj[11] + '</th>';
-    th.innerHTML += '<th>' + obj[12] + '</th>';
-    th.innerHTML += '<th>' + obj[13] + '</th>';
-        tb.appendChild(th);
+    th.innerHTML += '<th>' + obj[0] + '<input type="button" class="btnSort"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[1] + '<input type="button" class="btnSort"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[2] + '<input type="button" id="btnSort"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[3] + '<input type="button" id="btnSort"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[4] + '<input type="button" id="btnSort"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[5] + '<input type="button" id="btnSort"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[6] + '<input type="button" id="btnSort"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[7] + '<input type="button" id="btnSort"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[8] + '<input click="json.sort" type="button" id="btnSort"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[9] + '<input type="button" id="btnSort"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[10] + '<input type="button" id="btnSort"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[11] + '<input type="button" id="btnSort"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[12] + '<input type="button" id="btnSort"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[13] + '<input type="button" id="btnSort"> </input>' + '</th>';
+        tb.appendChild(th).appendChild(btn);
 
     console.log(Object.keys(value.name));
 })
@@ -106,10 +106,12 @@ json.forEach(function (value) {
 
     })
 
+        var sort = document.getElementById('btnSort');
 
 
 
 console.log(tb)
+console.log(sort)
 
 
 
