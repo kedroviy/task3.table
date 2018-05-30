@@ -64,20 +64,20 @@ var btn = document.createElement('button');
 json.forEach(function (value) {
 
     var obj = Object.keys(value);
-    th.innerHTML += '<th>' + obj[0] + '<input type="button" class="btnSort"> </input>' + '</th>';
-    th.innerHTML += '<th>' + obj[1] + '<input type="button" class="btnSort"> </input>' + '</th>';
-    th.innerHTML += '<th>' + obj[2] + '<input type="button" id="btnSort"> </input>' + '</th>';
-    th.innerHTML += '<th>' + obj[3] + '<input type="button" id="btnSort"> </input>' + '</th>';
-    th.innerHTML += '<th>' + obj[4] + '<input type="button" id="btnSort"> </input>' + '</th>';
-    th.innerHTML += '<th>' + obj[5] + '<input type="button" id="btnSort"> </input>' + '</th>';
-    th.innerHTML += '<th>' + obj[6] + '<input type="button" id="btnSort"> </input>' + '</th>';
-    th.innerHTML += '<th>' + obj[7] + '<input type="button" id="btnSort"> </input>' + '</th>';
-    th.innerHTML += '<th>' + obj[8] + '<input click="json.sort" type="button" id="btnSort"> </input>' + '</th>';
-    th.innerHTML += '<th>' + obj[9] + '<input type="button" id="btnSort"> </input>' + '</th>';
-    th.innerHTML += '<th>' + obj[10] + '<input type="button" id="btnSort"> </input>' + '</th>';
-    th.innerHTML += '<th>' + obj[11] + '<input type="button" id="btnSort"> </input>' + '</th>';
-    th.innerHTML += '<th>' + obj[12] + '<input type="button" id="btnSort"> </input>' + '</th>';
-    th.innerHTML += '<th>' + obj[13] + '<input type="button" id="btnSort"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[0] + '<input type="button" class="sortId"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[1] + '<input type="button" class="sortIndex"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[2] + '<input type="button" class="sortGiud"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[3] + '<input type="button" class="sortIsActive"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[4] + '<input type="button" class="sortBalance"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[5] + '<input type="button" class="sortPicture"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[6] + '<input type="button" class="sortAge"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[7] + '<input type="button" class="sortEyeColor"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[8] + '<input click="json.sort" type="button" class="sortName"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[9] + '<input type="button" class="sortGender"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[10] + '<input type="button" class="sortCompany"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[11] + '<input type="button" class="sortEmail"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[12] + '<input type="button" class="sortPhone"> </input>' + '</th>';
+    th.innerHTML += '<th>' + obj[13] + '<input type="button" class="sortAddress"> </input>' + '</th>';
         tb.appendChild(th).appendChild(btn);
 
     console.log(Object.keys(value.name));
@@ -106,7 +106,7 @@ json.forEach(function (value) {
 
     })
 
-        var sort = document.getElementById('btnSort');
+        var sort = document.querySelector('sort');
 
 
 
