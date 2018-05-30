@@ -56,16 +56,40 @@ var json = [
         "company": "SPLINX",
         "email": "stacyfrank@splinx.com",
         "phone": "+1 (910) 542-2988",
-        "address": "488 Emmons Avenue, Imperial, American Samoa, 1524",}]
+        "address": "488 Emmons Avenue, Imperial, American Samoa, 1524",},
+    {"_id": "5afea645fbfcc7026f1dadeb",
+    "index": 5,
+    "guid": "5e1bdb32-a8e8-474e-8bb0-1ba64b247ebe",
+    "isActive": true,
+    "balance": "$3,699.45",
+    "picture": "http://placehold.it/32x32",
+    "age": 36,
+    "eyeColor": "green",
+    "name": "Christi Zamora",
+    "gender": "female",
+    "company": "VELOS",
+    "email": "christizamora@velos.com",
+    "phone": "+1 (935) 486-2015",
+    "address": "576 Hausman Street, Wattsville, Connecticut, 6328",}]
 
     json.splice(3,"")
 var tb = document.getElementById('table');
 var th = document.createElement('tr');
 var btn = document.createElement('button');
+    function srt(){
+        Object.keys(json[0]).sort(); {
+
+        } {
+
+        }
+        console.log(1);
+    }
+
+
     Object.keys(json[0]).forEach(function (value) {
 
     // var obj = Object.keys(value);
-    th.innerHTML += '<th>' + value + '<input type="button" class="sort'+ value +'"> </input>' + '</th>';
+    th.innerHTML += '<th>' + value + '<input type="button" onclick="srt()" class="sort ' + value + ' "> </input>' + '</th>';
 
     // th.innerHTML += '<th>' +  + '<input type="button" class="sortIndex"> </input>' + '</th>';
     // th.innerHTML += '<th>' + obj[2] + '<input type="button" class="sortGiud"> </input>' + '</th>';
@@ -83,6 +107,7 @@ var btn = document.createElement('button');
 
 
     // console.log(Object.keys(value.name));
+
 })
 tb.appendChild(th).appendChild(btn);
     json.forEach(function (value) {
@@ -107,12 +132,12 @@ tb.appendChild(th).appendChild(btn);
 
     })
 
-        var sort = document.querySelector('sort');
+
 
 
 
 console.log(tb)
-console.log(sort)
+
 
 
 
