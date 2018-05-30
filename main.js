@@ -40,19 +40,28 @@ var bennett = [
             row.innerHTML += '<td>' + value.name + '</td>'
             row.innerHTML += '<td>' + value.gender + '</td>'
             row.innerHTML += '<td>' + value.company + '</td>'
+            row.innerHTML += '<td>' + value.email+ '</td>'
+            row.innerHTML += '<td>' + value.phone + '</td>'
+            row.innerHTML += '<td>' + value.adress + '</td>'
 
         tb.appendChild(row);
     })
 
-               var th = document.createElement('th');
+               var th = document.createElement('tr');
                 bennett.forEach(function (value) {
                     var obj = Object.keys(value);
                     th.innerHTML += '<th>' + obj[0] + '</th>';
+                    th.innerHTML += '<th>' + obj[1] + '</th>';
+                    th.innerHTML += '<th>' + obj[2] + '</th>';
+                    th.innerHTML += '<th>' + obj[3] + '</th>';
+                    th.innerHTML += '<th>' + obj[4] + '</th>';
+                    // th.innerHTML += '<th>' + obj[5] + '</th>';
+                    // th.innerHTML += '<th>' + obj[6] + '</th>';
                         tb.appendChild(th);
                     // console.log(Object.keys(value));
                 })
 
-
+console.log(tb)
 
 
 
