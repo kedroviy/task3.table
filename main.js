@@ -76,21 +76,17 @@ var json = [
 var tb = document.getElementById('table');
 var th = document.createElement('tr');
 var btn = document.createElement('button');
-    function srt(){
-        Object.keys(json[0])
 
+function srt() {
+    json.forEach(function (value) {
+        var sortRow = document.createElement('tr');
+        sortRow.innerHTML += '<td>' + sortRow + json.sort() + '</td>';
 
-            var sortRow = document.createElement('tr');
-            sortRow.innerHTML += '<td>' +  + '</td>'
-
-        
-
+        tb.replaceChild(sortRow, row)
         console.log(1);
-    }
-
-
-    Object.keys(json[0]).forEach(function (value) {
-
+        });
+        }
+Object.keys(json[0]).forEach(function (value) {
     // var obj = Object.keys(value);
     th.innerHTML += '<th>' + value + '<input type="button" onclick="srt()" class="sort ' + value + ' "> </input>' + '</th>';
 
@@ -110,8 +106,8 @@ var btn = document.createElement('button');
 
 
     // console.log(Object.keys(value.name));
-
 })
+
 tb.appendChild(th).appendChild(btn);
     json.forEach(function (value) {
         var row = document.createElement('tr');
@@ -134,12 +130,19 @@ tb.appendChild(th).appendChild(btn);
 
 
     })
+json.forEach(function (value) {
+    var sortRow = document.createElement('tr');
+    sortRow.innerHTML += '<td>' + value._id + json.sort() + '</td>';
+    document.body.insertBefore(sortRow, tr);
+    console.log(1);
+});
 
 
 
 
 
-console.log(tb)
+
+
 
 
 
