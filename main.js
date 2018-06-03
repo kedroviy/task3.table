@@ -1,5 +1,5 @@
-var json = [
-    {"_id": "5afea64553cc33b6b254ebb5",
+var jsan = [{
+        "_id": "5afea64553cc33b6b254ebb5",
         "index": 1,
         "guid": "19f3c372-6351-4622-9ffe-cfeb7529d704",
         "isActive": false,
@@ -70,23 +70,40 @@ var json = [
     "company": "VELOS",
     "email": "christizamora@velos.com",
     "phone": "+1 (935) 486-2015",
-    "address": "576 Hausman Street, Wattsville, Connecticut, 6328",}]
+    "address": "576 Hausman Street, Wattsville, Connecticut, 6328",}];
 
-    json.splice(3,"")
+    // jsan.splice(3,"");
+    var cont = jsan.parse;
 var tb = document.getElementById('table');
 var th = document.createElement('tr');
 var btn = document.createElement('button');
 
 function srt() {
-    json.forEach(function (value) {
-        var sortRow = document.createElement('tr');
-        sortRow.innerHTML += '<td>' + sortRow + json.sort() + '</td>';
+    jsan.forEach(function (value) {
+            jsan.sort();
+            console.log(value.name)
+            document.getElementById("table").innerHTML += '<td>' + value.balance + '</td>';
 
-        tb.replaceChild(sortRow, row)
+        // row.innerHTML += '<td>' + value._id + '</td>';
+        // row.innerHTML += '<td>' + value.index + '</td>';
+        // row.innerHTML += '<td>' + value.guid + '</td>';
+        // row.innerHTML += '<td>' + value.isActive + '</td>';
+        // row.innerHTML += '<td>' + value.balance + '</td>';
+        // row.innerHTML += '<td>' + value.picture + '</td>';
+        // row.innerHTML += '<td>' + value.age + '</td>';
+        // row.innerHTML += '<td>' + value.eyeColor + '</td>';
+        // row.innerHTML += '<td>' + value.name + '</td>';
+        // row.innerHTML += '<td>' + value.gender + '</td>';
+        // row.innerHTML += '<td>' + value.company + '</td>';
+        // row.innerHTML += '<td>' + value.email + '</td>';
+        // row.innerHTML += '<td>' + value.phone + '</td>';
+        // row.innerHTML += '<td>' + value.address + '</td>';
+        //
+        // tb.appendChild(row);
         console.log(1);
         });
         }
-Object.keys(json[0]).forEach(function (value) {
+Object.keys(jsan[0]).forEach(function (value) {
     // var obj = Object.keys(value);
     th.innerHTML += '<th>' + value + '<input type="button" onclick="srt()" class="sort ' + value + ' "> </input>' + '</th>';
 
@@ -106,36 +123,36 @@ Object.keys(json[0]).forEach(function (value) {
 
 
     // console.log(Object.keys(value.name));
-})
+});
 
 tb.appendChild(th).appendChild(btn);
-    json.forEach(function (value) {
+    jsan.forEach(function (value) {
         var row = document.createElement('tr');
-            row.innerHTML += '<td>' + value._id + '</td>'
-            row.innerHTML += '<td>' + value.index + '</td>'
-            row.innerHTML += '<td>' + value.guid + '</td>'
-            row.innerHTML += '<td>' + value.isActive + '</td>'
-            row.innerHTML += '<td>' + value.balance + '</td>'
-            row.innerHTML += '<td>' + value.picture + '</td>'
-            row.innerHTML += '<td>' + value.age + '</td>'
-            row.innerHTML += '<td>' + value.eyeColor + '</td>'
-            row.innerHTML += '<td>' + value.name + '</td>'
-            row.innerHTML += '<td>' + value.gender + '</td>'
-            row.innerHTML += '<td>' + value.company + '</td>'
-            row.innerHTML += '<td>' + value.email + '</td>'
-            row.innerHTML += '<td>' + value.phone + '</td>'
-            row.innerHTML += '<td>' + value.address + '</td>'
+            row.innerHTML += '<td>' + value._id + '</td>';
+            row.innerHTML += '<td>' + value.index + '</td>';
+            row.innerHTML += '<td>' + value.guid + '</td>';
+            row.innerHTML += '<td>' + value.isActive + '</td>';
+            row.innerHTML += '<td>' + value.balance + '</td>';
+            row.innerHTML += '<td>' + value.picture + '</td>';
+            row.innerHTML += '<td>' + value.age + '</td>';
+            row.innerHTML += '<td>' + value.eyeColor + '</td>';
+            row.innerHTML += '<td>' + value.name + '</td>';
+            row.innerHTML += '<td>' + value.gender + '</td>';
+            row.innerHTML += '<td>' + value.company + '</td>';
+            row.innerHTML += '<td>' + value.email + '</td>';
+            row.innerHTML += '<td>' + value.phone + '</td>';
+            row.innerHTML += '<td>' + value.address + '</td>';
 
         tb.appendChild(row);
 
 
-    })
-json.forEach(function (value) {
-    var sortRow = document.createElement('tr');
-    sortRow.innerHTML += '<td>' + value._id + json.sort() + '</td>';
-    document.body.insertBefore(sortRow, tr);
-    console.log(1);
-});
+    });
+// jsan.forEach(function (value) {
+//     var sortRow = document.createElement('tr');
+//     sortRow.innerHTML += '<td>' + value._id + jsan.sort() + '</td>';
+//     document.body.insertBefore(sortRow, tr);
+//     console.log(1);
+// });
 
 
 
