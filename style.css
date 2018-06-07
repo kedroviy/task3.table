@@ -18,6 +18,8 @@
   p{
     margin: 5px;
   }
-  .sort{
+  #sortd{
   background-color: #a6a8af;
+    border-radius: 5px 5px;
+
   }
