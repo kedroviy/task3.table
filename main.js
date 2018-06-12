@@ -81,68 +81,83 @@ var jsan = [{
     }
     ]
 
-// var prs = JSON.parse(jsan);
-var tb = document.getElementById('table');
-var th = document.createElement('tr');
+
+var table = document.getElementById('table');
+var thead = document.querySelector('#table thead');
 var btn = document.createElement('button');
+var tbody = document.querySelector('#table tbody');
 var content = document.getElementById('content');
 
 
-// noinspection JSAnnotator
+
 function srt(jsan) {
-            jsan.sort(a, b).forEach(value); {
-                if (a.balance < b.balance) return 1
-             }
-                content.remove(tb);
-                tb.appendChild(th).appendChild(btn);
-                jsan.forEach(function (value) {
-                    var sortRaw = document.createElement('tr');
-                    sortRaw.innerHTML += '<td>' + value._id + '</td>';
-                    sortRaw.innerHTML += '<td>' + value.index + '</td>';
-                    sortRaw.innerHTML += '<td>' + value.guid + '</td>';
-                    sortRaw.innerHTML += '<td>' + value.isActive + '</td>';
-                    sortRaw.innerHTML += '<td>' + value.balance + '</td>';
-                    sortRaw.innerHTML += '<td>' + value.picture + '</td>';
-                    sortRaw.innerHTML += '<td>' + value.age + '</td>';
-                    sortRaw.innerHTML += '<td>' + value.eyeColor + '</td>';
-                    sortRaw.innerHTML += '<td>' + value.name + '</td>';
-                    sortRaw.innerHTML += '<td>' + value.gender + '</td>';
-                    sortRaw.innerHTML += '<td>' + value.company + '</td>';
-                    sortRaw.innerHTML += '<td>' + value.email + '</td>';
-                    sortRaw.innerHTML += '<td>' + value.phone + '</td>';
-                    sortRaw.innerHTML += '<td>' + value.address + '</td>';
-                    tb.appendChild(sortRaw);
-
-
-                })
+            tbody.innerHTML = ""
+            // content.remove(tb);
+            // tb.appendChild(th).appendChild(btn);
+    var sortR = jsan.sort(function (a, b) {
+        if (a.balance < b.balance) return 1
+        if (a.balance > b.balance) return -1
+        return 0
+    });
+    bodyCreator(sortR);
+            // jsan.sort(function (a, b) {
+            //     if (a.balance < b.balance) return 1
+            //     if (a.balance > b.balance) return -1
+            //     return 0
+            //  }).forEach(function (value) {
+            //         var sortRaw = document.createElement('tr');
+            //         sortRaw.innerHTML += '<td>' + value._id + '</td>';
+            //         sortRaw.innerHTML += '<td>' + value.index + '</td>';
+            //         sortRaw.innerHTML += '<td>' + value.guid + '</td>';
+            //         sortRaw.innerHTML += '<td>' + value.isActive + '</td>';
+            //         sortRaw.innerHTML += '<td>' + value.balance + '</td>';
+            //         sortRaw.innerHTML += '<td>' + value.picture + '</td>';
+            //         sortRaw.innerHTML += '<td>' + value.age + '</td>';
+            //         sortRaw.innerHTML += '<td>' + value.eyeColor + '</td>';
+            //         sortRaw.innerHTML += '<td>' + value.name + '</td>';
+            //         sortRaw.innerHTML += '<td>' + value.gender + '</td>';
+            //         sortRaw.innerHTML += '<td>' + value.company + '</td>';
+            //         sortRaw.innerHTML += '<td>' + value.email + '</td>';
+            //         sortRaw.innerHTML += '<td>' + value.phone + '</td>';
+            //         sortRaw.innerHTML += '<td>' + value.address + '</td>';
+            //         tb.appendChild(sortRaw);
+            //
+            //
+            //     })
+    console.log(tbody);
                 console.log(jsan);
 
         }
-Object.keys(jsan[0]).forEach(function (value) {
-    // var obj = Object.keys(value);
-    th.innerHTML += '<th>' + value + '<input type="button" onclick="srt(jsan)" ' + ' "> </input>' + '</th>';
+        function headCreator() {
+    var headRow = document.createElement('tr');
+            Object.keys(jsan[0]).forEach(function (value) {
 
-    // th.innerHTML += '<th>' +  + '<input type="button" class="sortIndex"> </input>' + '</th>';
-    // th.innerHTML += '<th>' + obj[2] + '<input type="button" class="sortGiud"> </input>' + '</th>';
-    // th.innerHTML += '<th>' + obj[3] + '<input type="button" class="sortIsActive"> </input>' + '</th>';
-    // th.innerHTML += '<th>' + obj[4] + '<input type="button" class="sortBalance"> </input>' + '</th>';
-    // th.innerHTML += '<th>' + obj[5] + '<input type="button" class="sortPicture"> </input>' + '</th>';
-    // th.innerHTML += '<th>' + obj[6] + '<input type="button" class="sortAge"> </input>' + '</th>';
-    // th.innerHTML += '<th>' + obj[7] + '<input type="button" class="sortEyeColor"> </input>' + '</th>';
-    // th.innerHTML += '<th>' + obj[8] + '<input click="json.sort" type="button" class="sortName"> </input>' + '</th>';
-    // th.innerHTML += '<th>' + obj[9] + '<input type="button" class="sortGender"> </input>' + '</th>';
-    // th.innerHTML += '<th>' + obj[10] + '<input type="button" class="sortCompany"> </input>' + '</th>';
-    // th.innerHTML += '<th>' + obj[11] + '<input type="button" class="sortEmail"> </input>' + '</th>';
-    // th.innerHTML += '<th>' + obj[12] + '<input type="button" class="sortPhone"> </input>' + '</th>';
-    // th.innerHTML += '<th>' + obj[13] + '<input type="button" class="sortAddress"> </input>' + '</th>';
+                headRow.innerHTML += '<th>' + value + '<input type="button" onclick="srt(jsan)" ' + ' "> </input>' + '</th>';
+
+                // th.innerHTML += '<th>' +  + '<input type="button" class="sortIndex"> </input>' + '</th>';
+                // th.innerHTML += '<th>' + obj[2] + '<input type="button" class="sortGiud"> </input>' + '</th>';
+                // th.innerHTML += '<th>' + obj[3] + '<input type="button" class="sortIsActive"> </input>' + '</th>';
+                // th.innerHTML += '<th>' + obj[4] + '<input type="button" class="sortBalance"> </input>' + '</th>';
+                // th.innerHTML += '<th>' + obj[5] + '<input type="button" class="sortPicture"> </input>' + '</th>';
+                // th.innerHTML += '<th>' + obj[6] + '<input type="button" class="sortAge"> </input>' + '</th>';
+                // th.innerHTML += '<th>' + obj[7] + '<input type="button" class="sortEyeColor"> </input>' + '</th>';
+                // th.innerHTML += '<th>' + obj[8] + '<input click="json.sort" type="button" class="sortName"> </input>' + '</th>';
+                // th.innerHTML += '<th>' + obj[9] + '<input type="button" class="sortGender"> </input>' + '</th>';
+                // th.innerHTML += '<th>' + obj[10] + '<input type="button" class="sortCompany"> </input>' + '</th>';
+                // th.innerHTML += '<th>' + obj[11] + '<input type="button" class="sortEmail"> </input>' + '</th>';
+                // th.innerHTML += '<th>' + obj[12] + '<input type="button" class="sortPhone"> </input>' + '</th>';
+                // th.innerHTML += '<th>' + obj[13] + '<input type="button" class="sortAddress"> </input>' + '</th>';
 
 
-    // console.log(Object.keys(value.name));
-});
+                // console.log(Object.keys(value.name));
+            });
+            thead.appendChild(headRow)
+        }
+        headCreator();
+    function bodyCreator(array) {
 
-tb.appendChild(th).appendChild(btn);
-    jsan.forEach(function (value) {
-        var row = document.createElement('tr');
+        array.forEach(function (value) {
+            var row = document.createElement('tr');
             row.innerHTML += '<td>' + value._id + '</td>';
             row.innerHTML += '<td>' + value.index + '</td>';
             row.innerHTML += '<td>' + value.guid + '</td>';
@@ -157,8 +172,9 @@ tb.appendChild(th).appendChild(btn);
             row.innerHTML += '<td>' + value.email + '</td>';
             row.innerHTML += '<td>' + value.phone + '</td>';
             row.innerHTML += '<td>' + value.address + '</td>';
+            tbody.appendChild(row);
 
-        tb.appendChild(row);
 
-
-    });
+        });
+    }
+    bodyCreator(jsan);
