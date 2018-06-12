@@ -86,13 +86,14 @@ var tb = document.getElementById('table');
 var th = document.createElement('tr');
 var btn = document.createElement('button');
 var content = document.getElementById('content');
-var sortRaw = document.createElement('tr');
 
+
+// noinspection JSAnnotator
 function srt(jsan) {
-            jsan.sort (function (a, b) {
-                if (a.balance > b.balance) return 1
+            jsan.sort(a, b).forEach(value); {
+                if (a.balance < b.balance) return 1
+             }
                 content.remove(tb);
-            });
                 tb.appendChild(th).appendChild(btn);
                 jsan.forEach(function (value) {
                     var sortRaw = document.createElement('tr');
