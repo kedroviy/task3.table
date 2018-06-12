@@ -85,14 +85,15 @@ var jsan = [{
 var tb = document.getElementById('table');
 var th = document.createElement('tr');
 var btn = document.createElement('button');
-var newSort = document.createElement('tr');
+var content = document.getElementById('content');
+var sortRaw = document.createElement('tr');
 
 function srt(jsan) {
             jsan.sort (function (a, b) {
                 if (a.balance > b.balance) return 1
-
-
-            tb.appendChild(th).appendChild(btn);
+                content.remove(tb);
+            });
+                tb.appendChild(th).appendChild(btn);
                 jsan.forEach(function (value) {
                     var sortRaw = document.createElement('tr');
                     sortRaw.innerHTML += '<td>' + value._id + '</td>';
@@ -110,15 +111,15 @@ function srt(jsan) {
                     sortRaw.innerHTML += '<td>' + value.phone + '</td>';
                     sortRaw.innerHTML += '<td>' + value.address + '</td>';
                     tb.appendChild(sortRaw);
-                    tb.removeChild(tb);
+
 
                 })
-        console.log(jsan);
-        });
+                console.log(jsan);
+
         }
 Object.keys(jsan[0]).forEach(function (value) {
     // var obj = Object.keys(value);
-    th.innerHTML += '<th>' + value + '<input type="button" onclick="srt(jsan)" id="sortd" ' + value + ' "> </input>' + '</th>';
+    th.innerHTML += '<th>' + value + '<input type="button" onclick="srt(jsan)" ' + ' "> </input>' + '</th>';
 
     // th.innerHTML += '<th>' +  + '<input type="button" class="sortIndex"> </input>' + '</th>';
     // th.innerHTML += '<th>' + obj[2] + '<input type="button" class="sortGiud"> </input>' + '</th>';
