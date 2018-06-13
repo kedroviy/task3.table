@@ -92,38 +92,13 @@ var content = document.getElementById('content');
 
 function srt(jsan) {
             tbody.innerHTML = ""
-            // content.remove(tb);
-            // tb.appendChild(th).appendChild(btn);
     var sortR = jsan.sort(function (a, b) {
         if (a.balance < b.balance) return 1
         if (a.balance > b.balance) return -1
         return 0
     });
     bodyCreator(sortR);
-            // jsan.sort(function (a, b) {
-            //     if (a.balance < b.balance) return 1
-            //     if (a.balance > b.balance) return -1
-            //     return 0
-            //  }).forEach(function (value) {
-            //         var sortRaw = document.createElement('tr');
-            //         sortRaw.innerHTML += '<td>' + value._id + '</td>';
-            //         sortRaw.innerHTML += '<td>' + value.index + '</td>';
-            //         sortRaw.innerHTML += '<td>' + value.guid + '</td>';
-            //         sortRaw.innerHTML += '<td>' + value.isActive + '</td>';
-            //         sortRaw.innerHTML += '<td>' + value.balance + '</td>';
-            //         sortRaw.innerHTML += '<td>' + value.picture + '</td>';
-            //         sortRaw.innerHTML += '<td>' + value.age + '</td>';
-            //         sortRaw.innerHTML += '<td>' + value.eyeColor + '</td>';
-            //         sortRaw.innerHTML += '<td>' + value.name + '</td>';
-            //         sortRaw.innerHTML += '<td>' + value.gender + '</td>';
-            //         sortRaw.innerHTML += '<td>' + value.company + '</td>';
-            //         sortRaw.innerHTML += '<td>' + value.email + '</td>';
-            //         sortRaw.innerHTML += '<td>' + value.phone + '</td>';
-            //         sortRaw.innerHTML += '<td>' + value.address + '</td>';
-            //         tb.appendChild(sortRaw);
-            //
-            //
-            //     })
+
     console.log(tbody);
                 console.log(jsan);
 
@@ -132,24 +107,9 @@ function srt(jsan) {
     var headRow = document.createElement('tr');
             Object.keys(jsan[0]).forEach(function (value) {
 
-                headRow.innerHTML += '<th>' + value + '<input type="button" onclick="srt(jsan)" ' + ' "> </input>' + '</th>';
+                headRow.innerHTML += '<th xmlns="http://www.w3.org/1999/html">' + value + '<button type="button" onclick="srt(jsan)" ' + ' "><img src="image/arrup.png"> </button>' + '</th>';
 
-                // th.innerHTML += '<th>' +  + '<input type="button" class="sortIndex"> </input>' + '</th>';
-                // th.innerHTML += '<th>' + obj[2] + '<input type="button" class="sortGiud"> </input>' + '</th>';
-                // th.innerHTML += '<th>' + obj[3] + '<input type="button" class="sortIsActive"> </input>' + '</th>';
-                // th.innerHTML += '<th>' + obj[4] + '<input type="button" class="sortBalance"> </input>' + '</th>';
-                // th.innerHTML += '<th>' + obj[5] + '<input type="button" class="sortPicture"> </input>' + '</th>';
-                // th.innerHTML += '<th>' + obj[6] + '<input type="button" class="sortAge"> </input>' + '</th>';
-                // th.innerHTML += '<th>' + obj[7] + '<input type="button" class="sortEyeColor"> </input>' + '</th>';
-                // th.innerHTML += '<th>' + obj[8] + '<input click="json.sort" type="button" class="sortName"> </input>' + '</th>';
-                // th.innerHTML += '<th>' + obj[9] + '<input type="button" class="sortGender"> </input>' + '</th>';
-                // th.innerHTML += '<th>' + obj[10] + '<input type="button" class="sortCompany"> </input>' + '</th>';
-                // th.innerHTML += '<th>' + obj[11] + '<input type="button" class="sortEmail"> </input>' + '</th>';
-                // th.innerHTML += '<th>' + obj[12] + '<input type="button" class="sortPhone"> </input>' + '</th>';
-                // th.innerHTML += '<th>' + obj[13] + '<input type="button" class="sortAddress"> </input>' + '</th>';
-
-
-                // console.log(Object.keys(value.name));
+               
             });
             thead.appendChild(headRow)
         }
