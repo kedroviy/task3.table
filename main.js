@@ -103,11 +103,23 @@ function srt(jsan) {
                 console.log(jsan);
 
         }
+        function sortDown(jsan) {
+            tbody.innerHTML = ""
+            var sortD = jsan.sort(function (a, b) {
+                if (a.balance > b.balance) return 1
+                if (a.balance < b.balance) return -1
+                return 0
+
+            });
+            bodyCreator(sortD);
+        }
+
         function headCreator() {
     var headRow = document.createElement('tr');
             Object.keys(jsan[0]).forEach(function (value) {
 
-                headRow.innerHTML += '<th xmlns="http://www.w3.org/1999/html">' + value + '<button type="button" onclick="srt(jsan)" ' + ' "><img src="image/arrup.png"> </button>' + '</th>';
+                headRow.innerHTML += '<th xmlns="http://www.w3.org/1999/html">' + value + '<button type="button" onclick="srt(jsan)" ' + ' "><img src="image/arrup.png"> </button>' +
+                    '<br>' + '<button type="button" onclick="sortDown(jsan)" ' + ' "><img src="image/arrdown.png"> </button>' + '</th>';
 
                
             });
