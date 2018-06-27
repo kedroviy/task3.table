@@ -119,7 +119,7 @@ function srt(jsan) {
             Object.keys(jsan[0]).forEach(function (value) {
 
                 headRow.innerHTML += '<th xmlns="http://www.w3.org/1999/html">' + value + '<button type="button" onclick="srt(jsan)" ' + ' "><img src="image/arrup.png"> </button>' +
-                    '<br>' + '<button type="button" onclick="sortDown(jsan)" ' + ' "><img src="image/arrdown.png"> </button>' + '</th>';
+                    '<br>' + '<button type="button" onclick="sortDown(jsan) " ' + ' "><img src="image/arrdown.png"> </button>' + '</th>';
 
                
             });
