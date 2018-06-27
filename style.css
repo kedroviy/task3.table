@@ -24,3 +24,23 @@
     border-radius: 5px;
     background-color: #e7e9f0;
   }
+  input{
+    display: inline;
+    margin-left: 200px;
+
+  }
+  .window{
+    display: inline;
+    margin-left: 690px;
+    margin-top: 15px;
+  }
+  a {
+    display: flex;
+    justify-content: center;
+  }
+  button{
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
